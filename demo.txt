@@ -1,0 +1,16 @@
+# Image repository
+msecrist/ecs-demo-1:1.0
+
+# Demo Steps
+1. Create the ECS Cluster for Lambda
+2. Define a task using the image above
+   - Be sure to select ARM (it seems to work better with the image)
+3. Create a service
+  - Be sure to set the right security group
+  - Be sure to select load balancing and target the load balancer created (and the target group)
+  - Be sure to set autoscaling using mostly default values
+
+4. While service is starting up, go to the load balancer target group and show no entries - 
+   or perhaps just the one newly started
+5. When the task has started, hit the load balancer : 
+   http://ecs-demo-alb-145424871.us-west-2.elb.amazonaws.com:3000/
